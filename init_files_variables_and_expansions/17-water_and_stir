@@ -1,2 +1,2 @@
 #!/bin/bash
-bc <<< "obase=8;ibase=5;$(echo $WATER|tr water 01234)+$(echo $STIR|tr stir. 01234)" | tr 01234567 bestchol
+python3 -c "w=$(echo $WATER|tr water 01234); s=$(echo $STIR|tr stir. 01234); print(oct(int(str(w),5)+int(str(s),5))[2:])" | tr 01234567 bestchol
